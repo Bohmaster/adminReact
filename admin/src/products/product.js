@@ -15,8 +15,6 @@ import { List,
          SimpleForm, 
          TextInput } from 'admin-on-rest';
 
-const API = "http://localhost:3005/api";
-
 let onFileDialogCancel = (args) => {
     console.log('onFileDialogCancel', args)
 }     
@@ -29,7 +27,9 @@ export const ProductList = (props) => (
             </ReferenceField>            
             <TextField source="id" />
             <TextField source="nombre" />
-            <TextField source="descripcion" />
+            <TextField source="descripcion" />	
+	    <TextField source="direccion" />
+            <TextField source="telefono" />
             <ImageField source="fotos" src="nombre"/>
             <EditButton></EditButton>
         </Datagrid>
@@ -47,8 +47,11 @@ export const ProductCreate = (props) => (
                 <SelectInput optionText="nombre" />
             </ReferenceInput>  
             <TextInput source="nombre" />
-            <LongTextInput source="descripcion" />
-            <ImageInput source="fotos" multiple label="Related pictures" accept="image/*" placeholder={<p>Drop your file here</p>}>
+	    <TextInput source="direccion" />
+            <TextInput source="telefono" />
+	    <TextInput source="descripcion" />
+
+            <ImageInput source="fotos" input={{onChange: (files) => console.log('files', files)}} multiple label="Related pictures" accept="image/*" placeholder={<p>Drop your file here</p>}>
                 <ImageField source="src" title="title" />
             </ImageInput>
         </SimpleForm>
@@ -66,7 +69,9 @@ export const ProductEdit = (props) => (
                 <SelectInput optionText="nombre" />
             </ReferenceInput>  
             <TextInput source="nombre" />
-            <LongTextInput source="descripcion" />
+	    <TextInput source="direccion" />
+            <TextInput source="telefono" />
+	    <TextInput source="descripcion" />
             <ImageInput source="fotos" multiple label="Related pictures" accept="image/*" placeholder={<p>Drop your file here</p>}>
                 <ImageField source="src" title="title" />
             </ImageInput>            

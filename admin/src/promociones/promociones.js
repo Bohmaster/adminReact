@@ -6,6 +6,7 @@ import { List,
          ReferenceField, 
          TextField, 
          EditButton, 
+	 DeleteButton,
          DisabledInput, 
          LongTextInput, 
          ReferenceInput, 
@@ -22,7 +23,7 @@ let onFileDialogCancel = (args) => {
 }     
 
 export const PromocionList = (props) => (
-    <List {...props}>
+    <List {...props}> 
         <Datagrid>
             <ReferenceField label="Comercio" source="comercioId" reference="Comercios">
                 <TextField source="nombre" />
@@ -32,6 +33,7 @@ export const PromocionList = (props) => (
             <TextField source="descripcion" />
             <ImageField source="fotos" src="nombre"/>
             <EditButton></EditButton>
+            <DeleteButton></DeleteButton>
         </Datagrid>
     </List>
 );

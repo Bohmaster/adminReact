@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = "http://localhost:3005/api";
+const API = "http://165.227.217.5:3005/api";
 
 const addUploadCapabilities = requestHandler => (type, resource, params) => {
     console.log(type, resource, params);

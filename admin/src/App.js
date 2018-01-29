@@ -1,5 +1,5 @@
 import React from 'react';
-import { Admin, Resource } from 'admin-on-rest';
+import { Admin, Resource, Delete } from 'admin-on-rest';
 
 import loopbackRestClient, {authClient} from 'aor-loopback';
 
@@ -16,7 +16,7 @@ import Header from './components/header'
 
 import addUploadCapabilities from './fileUpload';
 
-const API = "http://localhost:3005/api";
+const API = "http://165.227.217.5:3005/api";
 
 const messages = {
     'es': spanishMessages,
@@ -44,12 +44,14 @@ const messages = {
           name="Comercios" 
           list={ProductList}
           create={ProductCreate}
-          edit={ProductEdit} />
+          edit={ProductEdit}
+          remove={Delete} />
         <Resource 
           name="SubCategoria" 
           list={SubCategoryList}
           create={SubCategoryCreate}
-          edit={SubCategoryEdit} />
+          edit={SubCategoryEdit}
+	  remove={Delete} />
         <Resource 
           name="Categoria" 
           list={CategoryList}
@@ -59,12 +61,14 @@ const messages = {
           name="Novedads" 
           list={NovedadList}
           create={NovedadCreate}
-          edit={NovedadEdit} /> 
+          edit={NovedadEdit}
+	  remove={Delete} /> 
           <Resource 
           name="promociones" 
           list={PromocionList}
           create={PromocionCreate}
-          edit={PromocionEdit} />   
+          edit={PromocionEdit}
+	  remove={Delete} />   
           
     </Admin>
 );
